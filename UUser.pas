@@ -682,8 +682,8 @@ type
 var
   UserList : TUserList;
   boCheckSpeed : Boolean = true;   // true·Î ¹Ù²ã¾ßµÊ
-  VirtueMulti : Integer = 11;
-  ExpMulti : Integer = 11;
+  VirtueMulti : Integer = 10;
+  ExpMulti : Integer = 10;
   boMoveAllItem : Boolean = true;
   boMoveItem : Boolean = true;
 
@@ -5487,7 +5487,7 @@ begin
                      JobClass.GetUpgradeItemLifeData (ItemData);
                      if ItemData.rboDouble = false then ItemData.rCount := 1;
 
-                     tmpBasicData.Feature.rRace := RACE_NPC;
+                     tmpBasicData.Feature.rRace := RACE_HUMAN;
                      StrPCopy (@tmpBasicData.Name, Conv('ÎÊ´ð½±Æ·'));
                      tmpBasicData.x := BasicData.x;
                      tmpBasicData.y := BasicData.y;

@@ -8927,7 +8927,7 @@ var
    str : String;
 begin
    Result := '';
-   str := Conv('? 问答内容 ?') + #13;
+   str := Conv('【问答内容】') + #13;
    str := str + Conv('问题 : ') + Question + #13;
    str := str + Conv('答案 : ') + Answer + #13;
    str := str + Conv('奖品 : ') + FPresentName + #13 ;
