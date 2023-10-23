@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{af12fee4-9093-4eaf-92b1-64d8cfa574ab}</ProjectGuid>
+    <MainSource>tgs1000.dpr</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>run\tgs1000.exe</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Alignment>1</DCC_Alignment>
+    <DCC_AssertionsAtRuntime>False</DCC_AssertionsAtRuntime>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_WriteableConstants>True</DCC_WriteableConstants>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_ExeOutput>run</DCC_ExeOutput>
+    <DCC_DcuOutput>dcu</DCC_DcuOutput>
+    <DCC_ObjOutput>dcu</DCC_ObjOutput>
+    <DCC_HppOutput>dcu</DCC_HppOutput>
+    <DCC_UnitSearchPath>D:\PROJECT\alib;..\1000ydef;..\common</DCC_UnitSearchPath>
+    <DCC_ResourcePath>D:\PROJECT\alib;..\1000ydef;..\common</DCC_ResourcePath>
+    <DCC_ObjPath>D:\PROJECT\alib;..\1000ydef;..\common</DCC_ObjPath>
+    <DCC_IncludePath>D:\PROJECT\alib;..\1000ydef;..\common</DCC_IncludePath>
+    <DCC_Define>_CHINA;RELEASE</DCC_Define>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_AssertionsAtRuntime>False</DCC_AssertionsAtRuntime>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_WriteableConstants>True</DCC_WriteableConstants>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_ExeOutput>run</DCC_ExeOutput>
+    <DCC_DcuOutput>dcu</DCC_DcuOutput>
+    <DCC_ObjOutput>dcu</DCC_ObjOutput>
+    <DCC_HppOutput>dcu</DCC_HppOutput>
+    <DCC_UnitSearchPath>D:\PROJECT\alib;..\1000ydef;..\common;E:\编程工具\Fastnet\lib</DCC_UnitSearchPath>
+    <DCC_ResourcePath>D:\PROJECT\alib;..\1000ydef;..\common;E:\编程工具\Fastnet\lib</DCC_ResourcePath>
+    <DCC_ObjPath>D:\PROJECT\alib;..\1000ydef;..\common;E:\编程工具\Fastnet\lib</DCC_ObjPath>
+    <DCC_IncludePath>D:\PROJECT\alib;..\1000ydef;..\common;E:\编程工具\Fastnet\lib</DCC_IncludePath>
+    <DCC_Define>_CHINA;DEBUG</DCC_Define>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><Language><Language Name="RootDir">D:\Program Files\Borland\Delphi6\Bin\</Language></Language><VersionInfo><VersionInfo Name="IncludeVerInfo">False</VersionInfo><VersionInfo Name="AutoIncBuild">True</VersionInfo><VersionInfo Name="MajorVer">1</VersionInfo><VersionInfo Name="MinorVer">0</VersionInfo><VersionInfo Name="Release">40</VersionInfo><VersionInfo Name="Build">186</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">2052</VersionInfo><VersionInfo Name="CodePage">936</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName">Actoz soft</VersionInfoKeys><VersionInfoKeys Name="FileDescription">1000y</VersionInfoKeys><VersionInfoKeys Name="FileVersion">1.0.40.186</VersionInfoKeys><VersionInfoKeys Name="InternalName">1000y</VersionInfoKeys><VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName"></VersionInfoKeys><VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Source><Source Name="MainSource">tgs1000.dpr</Source></Source></Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="tgs1000.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="..\1000ydef\deftype.pas" />
+    <DCCReference Include="..\common\AnsImg2.pas" />
+    <DCCReference Include="..\common\AnsStringCls.pas" />
+    <DCCReference Include="..\common\BmpUtil.pas" />
+    <DCCReference Include="..\common\BSCommon.pas" />
+    <DCCReference Include="..\common\ScriptBasic.pas" />
+    <DCCReference Include="..\common\ScriptCls.pas" />
+    <DCCReference Include="..\common\uAnsTick.pas" />
+    <DCCReference Include="..\common\uBuffer.pas" />
+    <DCCReference Include="..\common\uCharCheck.pas" />
+    <DCCReference Include="..\common\uCookie.pas" />
+    <DCCReference Include="..\common\uCrypt.pas" />
+    <DCCReference Include="..\common\uDBRecordDef.pas" />
+    <DCCReference Include="..\common\uFuck.pas" />
+    <DCCReference Include="..\common\uImage.pas" />
+    <DCCReference Include="..\common\uKeyClass.pas" />
+    <DCCReference Include="..\common\uPackets.pas" />
+    <DCCReference Include="..\common\uUtil.pas" />
+    <DCCReference Include="BasicObj.pas" />
+    <DCCReference Include="FGate.pas">
+      <Form>frmGate</Form>
+    </DCCReference>
+    <DCCReference Include="fieldmsg.pas" />
+    <DCCReference Include="FLOg.pas">
+      <Form>frmLog</Form>
+    </DCCReference>
+    <DCCReference Include="FSockets.pas">
+      <Form>FrmSockets</Form>
+    </DCCReference>
+    <DCCReference Include="FTrace.pas">
+      <Form>frmTrace</Form>
+    </DCCReference>
+    <DCCReference Include="MapUnit.pas" />
+    <DCCReference Include="SubUtil.pas" />
+    <DCCReference Include="svClass.pas" />
+    <DCCReference Include="SVMain.pas">
+      <Form>FrmMain</Form>
+    </DCCReference>
+    <DCCReference Include="uAIPath.pas" />
+    <DCCReference Include="uArena.pas" />
+    <DCCReference Include="uConnect.pas" />
+    <DCCReference Include="uDoorGen.pas" />
+    <DCCReference Include="uEvent.pas" />
+    <DCCReference Include="uGConnect.pas" />
+    <DCCReference Include="uGuild.pas" />
+    <DCCReference Include="uGuildSub.pas" />
+    <DCCReference Include="uItemDeal.pas" />
+    <DCCReference Include="uItemLog.pas" />
+    <DCCReference Include="uLetter.pas" />
+    <DCCReference Include="uManager.pas" />
+    <DCCReference Include="uMonster.pas" />
+    <DCCReference Include="uMopSub.pas" />
+    <DCCReference Include="uNpc.pas" />
+    <DCCReference Include="uObjectEvent.pas" />
+    <DCCReference Include="uScriptManager.pas" />
+    <DCCReference Include="uSendCls.pas" />
+    <DCCReference Include="uSkills.pas" />
+    <DCCReference Include="UUser.pas" />
+    <DCCReference Include="uUserSub.pas" />
+    <DCCReference Include="uWorkBox.pas" />
+    <DCCReference Include="uZhuang.pas" />
+  </ItemGroup>
+</Project>
