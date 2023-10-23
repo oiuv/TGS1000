@@ -5463,15 +5463,15 @@ begin
                exit;
             end;
             }
-            {
-            if strs[0] = Conv('@翠') then begin
+
+            if strs[0] = Conv('@答') then begin
                if QuizSystem.Active = false then begin
-                  SendClass.SendChatMessage (Conv('泅犁 Quiz甫 柳青窍绊 乐瘤 臼嚼聪促'), SAY_COLOR_SYSTEM);
+                  SendClass.SendChatMessage (Conv('当前没有进行任何有奖问答'), SAY_COLOR_SYSTEM);
                   exit;
                end else begin
                   if QuizSystem.Answer = strs[1] then begin
                      QuizSystem.Active := false;
-                     tmpstr := format (Conv('%s丛膊辑 柠令甫 嘎眠继嚼聪促'),[StrPas (PChar (@BasicData.ViewName))] );
+                     tmpstr := format (Conv('%s成功回答了问题'),[StrPas (PChar (@BasicData.ViewName))] );
                      UserList.SendTopMessage (tmpstr);
                      ItemClass.GetItemData (QuizSystem.PresentName, ItemData);
 
@@ -5486,7 +5486,7 @@ begin
                      if ItemData.rboDouble = false then ItemData.rCount := 1;
 
                      tmpBasicData.Feature.rRace := RACE_NPC;
-                     StrPCopy (@tmpBasicData.Name, Conv('柠令惑前'));
+                     StrPCopy (@tmpBasicData.Name, Conv('问答奖品'));
                      tmpBasicData.x := BasicData.x;
                      tmpBasicData.y := BasicData.y;
                      SignToItem (ItemData, ServerID, tmpBasicData, '');
@@ -5495,7 +5495,7 @@ begin
                end;
                exit;
             end;
-            }
+
             {
             if Strs[0] = Conv('@函脚') then begin
                if boPolymorph = true then exit;
@@ -6204,7 +6204,7 @@ begin
                   exit;
                end;
 
-               if UpperCase (Strs[0]) = Conv('@问题确认') then begin
+               if UpperCase (Strs[0]) = Conv('@答题开始') then begin
                   QuizSystem.Active := true;
                   str := QuizSystem.Question;
                   str := str + Conv(' 奖品:') + QuizSystem.PresentName;
@@ -6213,7 +6213,7 @@ begin
                   exit;
                end;
 
-               if UpperCase (Strs[0]) = Conv('@答题开始') then begin
+               if UpperCase (Strs[0]) = Conv('@问题确认') then begin
                   SendClass.SendChatMessage (QuizSystem.Presentation, SAY_COLOR_SYSTEM);
                   exit;
                end;
