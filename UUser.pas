@@ -737,6 +737,7 @@ const
   SAYCOMMAND_DESTROYPARTY      = 36;
   SAYCOMMAND_KICKOUTPARTY      = 37;
   SAYCOMMAND_PARTYMESSENGER    = 38;
+  SAYCOMMAND_ANSWER            = 39;
 
 procedure BuildSayCommand;
 begin
@@ -782,6 +783,7 @@ begin
   UserSayCommand.AddObject(Conv('@解散队伍'),     TObject(36));
   UserSayCommand.AddObject(Conv('@驱逐'),         TObject(37));
   UserSayCommand.AddObject(Conv('@组队信息'),     TObject(38));
+  UserSayCommand.AddObject(Conv('@答'),           TObject(39));
 end;
 //
 
@@ -5463,8 +5465,8 @@ begin
                exit;
             end;
             }
-
-            if strs[0] = Conv('@答') then begin
+            SAYCOMMAND_ANSWER: // Conv('@答')
+            begin
                if QuizSystem.Active = false then begin
                   SendClass.SendChatMessage (Conv('当前没有进行任何有奖问答'), SAY_COLOR_SYSTEM);
                   exit;
