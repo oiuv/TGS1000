@@ -94,7 +94,7 @@ OutputDir=bin
 UnitOutputDir=dcu
 PackageDLLOutputDir=
 PackageDCPOutputDir=
-SearchPath=..\1000ydef;..\common;.\..\..\..\Kor\Lib\Lib\ALib;.\..\..\..\Kor\Lib\Lib\common;.\..\..\..\Kor\Lib\Lib\directx;.\..\..\..\Kor\Lib\Lib\Dxd6;.\..\..\..\Fastnet\lib
+SearchPath=.\Kor\1000ydef;.\Kor\ALib;.\Kor\Common;.\Kor\FastNet
 Packages=vcl;rtl;vclx;VclSmp;vclshlctrls;dbrtl;adortl;vcldb;qrpt;bdertl;vcldbx;dsnap;cds;bdecds;teeui;teedb;tee;teeqr;ibxpress;visualclx;visualdbclx;vclie;xmlrtl;inet;inetdbbde;inetdbxpress;inetdb;nmfast;dbexpress;dbxcds;indy;dclOffice2k;DelphiX_for6
 Conditionals=_CHINA
 DebugSourceDirs=
@@ -115,7 +115,7 @@ AutoIncBuild=1
 MajorVer=1
 MinorVer=0
 Release=40
-Build=185
+Build=188
 Debug=0
 PreRelease=0
 Special=0
@@ -126,7 +126,7 @@ CodePage=936
 [Version Info Keys]
 CompanyName=Actoz soft
 FileDescription=1000y
-FileVersion=1.0.40.185
+FileVersion=1.0.40.188
 InternalName=1000y
 LegalCopyright=
 LegalTrademarks=
@@ -142,16 +142,11 @@ Item1=_TAIWAN
 Count=1
 Item0=WinTypes=Windows;WinProcs=Windows;DbiTypes=BDE;DbiProcs=BDE;DbiErrs=BDE;
 [HistoryLists\hlSearchPath]
-Count=3
-Item0=..\1000ydef;..\common;.\..\..\..\Kor\Lib\Lib\ALib;.\..\..\..\Kor\Lib\Lib\common;.\..\..\..\Kor\Lib\Lib\directx;.\..\..\..\Kor\Lib\Lib\Dxd6;.\..\..\..\Fastnet\lib
-Item1=..\1000ydef;..\common;.\..\..\..\Kor\Lib\Lib\ALib;.\..\..\..\Kor\Lib\Lib\common;.\..\..\..\Kor\Lib\Lib\directx;.\..\..\..\Kor\Lib\Lib\Dxd6
-Item2=..\1000ydef;..\common
+Count=1
+Item0=.\Kor\1000ydef;.\Kor\ALib;.\Kor\Common;.\Kor\FastNet
 [HistoryLists\hlUnitOutputDirectory]
-Count=3
+Count=1
 Item0=dcu
-Item1=run
-Item2=dcu
 [HistoryLists\hlOutputDirectorry]
-Count=2
+Count=1
 Item0=bin
-Item1=run

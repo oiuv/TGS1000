@@ -1,0 +1,133 @@
+unit uCookie;
+
+interface
+
+function oz_CRC32(pbuf: PBYTE; asize: integer): cardinal;
+function oz_CRC32_1(var pbuf: array of byte): cardinal;
+function oz_CRC32_2(var pbuf: array of byte): cardinal;
+
+implementation
+
+var
+  crc32tab: array[0..255] of cardinal =
+  (
+   $48062E0B, $030FFF84, $F2BF7FF5, $08D0B2FC,
+   $C65320BF, $1A04E904, $695F4030, $8EFC2A68,
+   $53CEF187, $326340B0, $5A3E9498, $BECCD9E2, 
+   $D0B53326, $21780677, $F0862E81, $4E658D9C, 
+   $6D7FD961, $B19E53AB, $6655DA03, $89BF4EEA, 
+   $1C527083, $B7C7C683, $1E3EFD7A, $D024D7C5, 
+   $D28C64D8, $78F97D9B, $8CC72905, $61B3964B, 
+   $9A3D5A34, $5FCDA371, $F1EAB608, $7CE1403B, 
+   $73A8936C, $01F189E7, $E29776AC, $CBF4F67C, 
+   $06C869D9, $75A555C6, $A22E755C, $2289F895, 
+   $24C7D4DA, $F73F3A37, $4C07C448, $8B0EE834, 
+   $19870150, $DEA9444A, $CCEC5CE5, $A4469CA9, 
+   $CD1BF922, $E4E0B671, $AC9C0F68, $4EC9866A, 
+   $B54C5AB9, $B975F404, $A7488250, $AA83A290, 
+   $97172083, $E80EFCBD, $171841DB, $6433FE56, 
+   $182C7872, $0DE4783B, $2DA4DF8E, $52ECCA9E, 
+   $206EAB7C, $5F445181, $FD7D21B0, $6596FF6E, 
+   $0B78151B, $7D10E276, $53A442CD, $E06B8F6D,
+   $AA142ACD, $9A3DAF64, $61104135, $EA7C2B68,
+   $13C39393, $F154B27B, $342A3E7C, $6B2C95D2, 
+   $483B4F73, $89F4374E, $0252EEFA, $37B1863D, 
+   $A0E2EEF7, $4E4C4653, $415A194B, $90991CE4, 
+   $1256DAAE, $70A4A065, $910825CE, $EF40E623, 
+   $3DE6AAA9, $20D34A43, $7496BE28, $235D6DFB,
+   $53188DFD, $91C8A811, $DC337CC0, $C0746392,
+   $C123C246, $4F0328D4, $7E81AC42, $DB634CAE, 
+   $B8741B20, $E21B81F7, $0217171E, $17D8C93F, 
+   $7C2B99AD, $C8387ACB, $F6FFE708, $05D766D4, 
+   $839D1414, $B7984801, $A0389478, $CF370422, 
+   $6BD3ECFE, $350D7730, $8D33E62A, $3523C483, 
+   $B907DB19, $797B6A53, $0357009D, $DD9B9373, 
+   $682CC098, $A75C634A, $377E8596, $F0F23813, 
+   $506492AF, $503D1F57, $5778C39C, $0750F8A8, 
+   $54895119, $4A4002A0, $6386F57B, $6630CE1A, 
+   $64A70D93, $D59BD3B1, $D7DE91C3, $8DE12778, 
+   $4F7F0360, $121606F9, $262CAA49, $17073D71, 
+   $6404BEC5, $C48E9A4A, $FF0C5BA3, $E019F5DA, 
+   $E2DF548D, $6C76805B, $6B934CAD, $8AE3572C, 
+   $3FECA985, $A9539C48, $B6C53E09, $4A038C05, 
+   $33BCC9FF, $F03E4D0F, $271EA998, $FE6D76A5, 
+   $9D145150, $91648913, $880C7204, $A4E9D470,
+   $326BE154, $0D87899A, $8371A239, $1392F171,
+   $036EA9E7, $BB7C0651, $CB243CE5, $0758EBD3, 
+   $CA7D006B, $BDAC00C5, $126F1BFD, $817D8767, 
+   $0E2D0747, $47961FE9, $D790E039, $75199123, 
+   $12C66564, $33499B95, $FD3AF095, $C497D2A0, 
+   $9BC40DB0, $E6EDB803, $341389D0, $8F389599,
+   $7D58169E, $8A39D152, $3435DDEF, $CE8DB771,
+   $FDE7A1A2, $8BFCF705, $C6B043B9, $44004CAB, 
+   $0788D2B7, $77961783, $9F04763A, $B64AD471, 
+   $2987D7DA, $1A7EBB97, $04AAE443, $7EFBFC10, 
+   $69E7008E, $F9BC51EF, $4C8A0FE6, $67F8F279, 
+   $E6D9E559, $176E0A9F, $2283FDFC, $D8F64BBF, 
+   $48489F44, $0846429D, $A2E9B5A1, $5502749D, 
+   $01500F5C, $59087F44, $4400CFB4, $47FAB5F0, 
+   $61C03635, $440EF9D4, $8F84165A, $2413C837, 
+   $779D9B64, $B6C5BAEE, $AC23347A, $CF53F718, 
+   $C0A0C502, $A72F461A, $B6FF7540, $6117D4DC, 
+   $ABB4BF2F, $B961D543, $ED2E939D, $2F8C7DF0, 
+   $EA7CB38A, $35052438, $A53C99C3, $2D386C64,
+   $92C990BB, $4AD8CC2B, $18A6D0AB, $9670DB6D,
+   $1026C1EB, $AA2B2F33, $FD5EBF91, $EEE1BAE5,
+   $E54EF649, $6664F3CC, $EF4C3B74, $4F0A32C8,
+   $3DB2F885, $2C7B1053, $A9C98699, $01BEB6B7
+  );
+
+procedure crc32Init(var pCrc32: cardinal);
+begin
+  pCrc32 := $FFFFFFFF;
+end;
+
+procedure crc32Update( var pCrc32: cardinal; pData: PBYTE; uSize: cardinal);
+var
+  i : cardinal;
+begin
+  for i := 0 to uSize-1 do begin
+    pCrc32 := ((pCrc32) shr 8) xor crc32tab[pData^ xor ((pCrc32) and $FF)];
+    inc(pData);
+  end;
+end;
+
+// Make the final adjustment
+procedure crc32Finish(var pCrc32: cardinal);
+begin
+  pCrc32 := not(pCrc32);
+end;
+
+function oz_CRC32(pbuf: PBYTE; asize: integer): cardinal;
+begin
+  crc32Init(Result);
+  if asize < 4 then asize := 4;
+  crc32Update(Result, pbuf, asize);
+  crc32Finish(Result);
+end;
+
+function oz_CRC32_1(var pbuf: array of byte): cardinal;
+var
+  buffer : array[0..3] of byte;
+begin
+  buffer[1] := pbuf[5];
+  buffer[3] := pbuf[3];
+  buffer[2] := pbuf[2];
+  buffer[0] := pbuf[7];
+
+  result := oz_CRC32(@buffer, 4);
+end;
+
+function oz_CRC32_2(var pbuf: array of byte): cardinal;
+var
+  buffer : array[0..3] of byte;
+begin
+  buffer[0] := pbuf[3];
+  buffer[2] := pbuf[11];
+  buffer[3] := pbuf[8];
+  buffer[1] := pbuf[2];
+
+  result := oz_CRC32(@buffer, 4);
+end;
+
+end.
