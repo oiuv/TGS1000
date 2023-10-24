@@ -6271,11 +6271,11 @@ begin
                   if Str <> '' then SendClass.SendChatMessage (Str, SAY_COLOR_SYSTEM);
                   exit;
                end;
-               if Strs [0] = Conv('@职业初始化') then begin
+               if Strs [0] = Conv('@技能初始化') then begin
                   HaveJobClass.ClearJobData;
                   exit;
                end;
-               if Strs [0] = Conv('@设置职业') then begin
+               if Strs [0] = Conv('@技能设定') then begin
                   HaveJobClass.SetJobTalent (_StrToInt (Strs [1]));
                   exit;
                end;
@@ -6284,13 +6284,13 @@ begin
                   TNpcList(Manager.NpcList).ReLoadFromNpcSetting (Strs [1]);
                   exit;
                end;
-               if Strs [0] = Conv('@任务数值') then begin
+               if Strs [0] = Conv('@任务数据') then begin
                   Str := format ('completequest : %d, currentquest : %d, queststr : %s, firstquest : %d', [userquestclass.CompleteQuestNo,
                      userquestclass.CurrentQuestNo, userquestclass.QuestStr, UserQuestClass.FirstQuestNo]);
                   SendClass.SendChatMessage (Str, SAY_COLOR_SYSTEM);
                   exit;
                end;
-               if Strs [0] = Conv('@任务初始化') then begin
+               if Strs [0] = Conv('@任务设定') then begin
                   UserQuestClass.CompleteQuestNo := _StrToInt (Strs [1]);
                   UserQuestClass.CurrentQuestNo := _StrToInt (Strs [2]);
                   UserQuestClass.QuestStr := Strs [3];
