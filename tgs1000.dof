@@ -115,7 +115,7 @@ AutoIncBuild=1
 MajorVer=1
 MinorVer=0
 Release=40
-Build=188
+Build=99
 Debug=0
 PreRelease=0
 Special=0
@@ -126,7 +126,7 @@ CodePage=936
 [Version Info Keys]
 CompanyName=Actoz soft
 FileDescription=1000y
-FileVersion=1.0.40.188
+FileVersion=1.0.40.99
 InternalName=1000y
 LegalCopyright=
 LegalTrademarks=
