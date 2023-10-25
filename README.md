@@ -1,6 +1,6 @@
 ## TGS1000
 
-网络游戏《千年-炎黄新章》TGS服务端原码，仅供学习参考。
+网络游戏《千年-炎黄新章》TGS服务端源码，仅供学习参考。
 
 推荐使用 [Delphi7](https://winworldpc.com/product/delphi/70) 编译。
 
@@ -15,3 +15,9 @@
     git submodule update --init
 
 使用 Delphi7 打开项目文件 `TGS1000.dpr`，直接编译。
+
+### 相关项目
+
+- [TGS1000y](https://github.com/oiuv/TGS1000y)
+- [1000yTGS](https://github.com/oiuv/1000yTGS)
+- [1000yPascal](https://github.com/oiuv/1000yPascal)
