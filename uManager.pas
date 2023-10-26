@@ -288,7 +288,7 @@ begin
 
    if CurTick >= timerTick + 6000 then begin
       if SOnTimer <> 0 then begin
-         ScriptManager.CallEvent (Self, nil, nil, SOnTimer, 'OnTimer', ['']);
+         ScriptManager.CallEvent (Self, nil, SOnTimer, 'OnTimer', ['']);
       end;
       timerTick := CurTick;
    end;
@@ -299,7 +299,7 @@ begin
       if MapAttribute = MAP_TYPE_KILLONLYONE then begin
          if (RemainHour = 0) and (RemainMin = 0) and (RemainSec = 30) then begin
             if SOnEventTimer <> 0 then begin
-               ScriptManager.CallEvent (Self, nil, nil, SOnEventTimer, 'OnEventTimer', ['']);
+               ScriptManager.CallEvent (Self, nil, SOnEventTimer, 'OnEventTimer', ['']);
             end;
          end;
       end;
