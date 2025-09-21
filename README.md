@@ -12,6 +12,7 @@ TGS1000/
 ├── *.dfm              # 窗体设计文件
 ├── tgs1000.dpr        # 项目主文件
 ├── tgs1000.cfg.example # 编译器配置示例文件
+├── build.bat          # 一键编译脚本
 ├── bin/               # 输出目录（已创建）
 │   ├── tgs1000.exe    # 编译后的可执行文件
 │   ├── game.ini       # 游戏配置文件
@@ -21,7 +22,6 @@ TGS1000/
 ├── dcu/               # 编译单元文件（已创建）
 ├── Kor/               # 第三方库和组件
 │   ├── 1000ydef/      # 游戏定义文件
-│   ├── ALib/          # 附加库
 │   ├── Common/        # 公共工具类
 │   └── FastNet/       # 网络通信库
 └── README.md
@@ -35,21 +35,28 @@ TGS1000/
 
 ### 编译方法
 
+#### 🚀 一键编译（推荐）
+
+使用提供的一键编译脚本，自动完成配置文件复制和编译：
+
+```bash
+# Windows下双击运行或在命令行执行
+build.bat
+```
+
+脚本会自动：
+- 检查并复制配置文件
+- 创建必要的目录结构
+- 执行编译过程
+- 显示编译结果和错误信息
+
 #### 1. 获取源码
 ```bash
 git clone --recurse-submodules https://github.com/oiuv/TGS1000.git
 git submodule update --init
 ```
 
-#### 2. 配置文件准备
-把项目提供的示例配置文件 `tgs1000.cfg.example`复制为 `tgs1000.cfg`：
-
-```bash
-# 复制配置文件
-cp tgs1000.cfg.example tgs1000.cfg
-```
-
-#### 3. 编译
+#### 2. 手动编译
 
 **方法1：Delphi7 IDE**
 1. 启动Delphi7
@@ -58,11 +65,14 @@ cp tgs1000.cfg.example tgs1000.cfg
 
 **方法2：命令行**
 ```bash
+# 复制配置文件
+cp tgs1000.cfg.example tgs1000.cfg
+
 # 直接编译（自动使用tgs1000.cfg）
 dcc32 -B tgs1000.dpr
 ```
 
-#### 4. 编译配置
+#### 3. 编译配置
 
 **发布版本**（默认tgs1000.cfg）：
 - 启用优化，关闭调试检查
@@ -80,7 +90,7 @@ dcc32 -B tgs1000.dpr
   - `-R".\Kor\..."` 资源文件搜索路径（.res文件）
   - `-E"bin"` 可执行文件输出目录
   - `-N"dcu"` 编译单元输出目录
-  - `-D_CHINA` 条件编译（中国市场版本）
+  - `-D_CHINA` 条件编译（中国简体版）
 
 **调试版本**（可选）：
 创建 `tgs1000.debug.cfg` 文件，推荐参数：
