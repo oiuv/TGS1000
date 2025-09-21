@@ -35,8 +35,8 @@
 -N"dcu"
 -LE"c:\program files (x86)\borland\delphi7\Projects\Bpl"
 -LN"c:\program files (x86)\borland\delphi7\Projects\Bpl"
--U".\Kor\1000ydef;.\Kor\ALib;.\Kor\Common;.\Kor\FastNet"
--O".\Kor\1000ydef;.\Kor\ALib;.\Kor\Common;.\Kor\FastNet"
--I".\Kor\1000ydef;.\Kor\ALib;.\Kor\Common;.\Kor\FastNet"
--R".\Kor\1000ydef;.\Kor\ALib;.\Kor\Common;.\Kor\FastNet"
+-U".\Kor\1000ydef;.\Kor\Common;.\Kor\FastNet"
+-O".\Kor\1000ydef;.\Kor\Common;.\Kor\FastNet"
+-I".\Kor\1000ydef;.\Kor\Common;.\Kor\FastNet"
+-R".\Kor\1000ydef;.\Kor\Common;.\Kor\FastNet"
 -D_CHINA
