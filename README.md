@@ -4,6 +4,10 @@
 
 推荐使用 [Delphi7](https://winworldpc.com/product/delphi/70) 编译。
 
+### 默认倍率
+
+服务端默认采用 **10 倍经验**和 **10 倍浩然正气增长**，对应 `UUser.pas` 中的 `ExpMulti = 10` 和 `VirtueMulti = 10`。
+
 ### 项目结构
 
 ```
@@ -115,6 +119,8 @@ dcc32 -B -@tgs1000.debug.cfg tgs1000.dpr
 
 ### 相关项目
 
-- [TGS1000y](https://github.com/oiuv/TGS1000y)
-- [1000yTGS](https://github.com/oiuv/1000yTGS)
-- [1000yPascal](https://github.com/oiuv/1000yPascal)
+- [TGS1000ySW](https://github.com/oiuv/TGS1000ySW) — 云端千年-神武奇章
+- [TGS1000yYH](https://github.com/oiuv/TGS1000yYH) — 云端千年-炎黄新章
+- [Cl1000](https://github.com/oiuv/Cl1000) — 炎黄新章客户端
+- [1000yDocs](https://github.com/oiuv/1000yDocs) — 千年开发文档
+- [1000ySource](https://github.com/oiuv/1000ySource) — 千年炎黄新章源码
