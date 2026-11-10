@@ -1,3 +1,4 @@
 [submodule "bin"]
 	path = bin
-	url = git@github.com:oiuv/TGS1000y.git
+	url = https://github.com/oiuv/TGS1000YH.git
+	branch = main
