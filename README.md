@@ -119,10 +119,11 @@ dcc32 -B -@tgs1000.debug.cfg tgs1000.dpr
 
 ### 相关项目
 
-- [cl1000](https://github.com/oiuv/Cl1000) — 炎黄新章客户端
-- [1000yDocs](https://github.com/oiuv/1000yDocs) — 千年开发文档
+- [CL1000](https://github.com/oiuv/CL1000.git) — 炎黄新章客户端 Client.exe 源代码
+- [1000yClient](https://github.com/oiuv/1000yClient.git) — 云端千年·炎黄新章完整客户端
+- [1000yDocs](https://github.com/oiuv/1000yDocs.git) — 千年开发文档
 - [1000yWeb](https://github.com/oiuv/1000yWeb.git) — 云端千年网站与账号中心
-- [1000yAPP](https://github.com/oiuv/1000yAPP) — 云端千年 Android 客户端
-- [1000ySource](https://github.com/oiuv/1000ySource) — 千年炎黄新章源码
-- [TGS1000SW](https://github.com/oiuv/TGS1000SW) — 云端千年-神武奇章 TGS 服务端
-- [TGS1000YH](https://github.com/oiuv/TGS1000YH) — 云端千年-炎黄新章 TGS 服务端
+- [1000yAPP](https://github.com/oiuv/1000yAPP.git) — 云端千年·炎黄新章 Android 客户端
+- [1000ySource](https://github.com/oiuv/1000ySource.git) — 千年炎黄新章源码
+- [TGS1000SW](https://github.com/oiuv/TGS1000SW.git) — 云端千年·神武奇章 TGS 服务端
+- [TGS1000YH](https://github.com/oiuv/TGS1000YH.git) — 云端千年·炎黄新章 TGS 服务端
